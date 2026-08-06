@@ -153,6 +153,36 @@ const menu = {
     ["Toppings", "50"],
   ],
 
+  /* =====================================================
+     ICE CREAM ROLL — 23 FLAVOURS
+  ===================================================== */
+
+  "Ice Cream Roll": [
+    ["Vanilla", "250"],
+    ["Chocolate", "250"],
+    ["Strawberry", "250"],
+    ["Mango", "250"],
+    ["Blueberry", "250"],
+    ["Matcha", "250"],
+    ["Taro", "250"],
+    ["Oreo", "250"],
+    ["Lotus", "250"],
+    ["Caramel", "250"],
+    ["Pistachio", "250"],
+    ["Coffee", "250"],
+    ["Mint Chocolate", "250"],
+    ["Cookies & Cream", "250"],
+    ["Nutella", "250"],
+    ["Banana", "250"],
+    ["Peach", "250"],
+    ["Lychee", "250"],
+    ["Passion Fruit", "250"],
+    ["Cheesecake", "250"],
+    ["Brownie", "250"],
+    ["Red Velvet", "250"],
+    ["Ferrero", "250"],
+  ],
+
   Smoothies: [
     ["Mango Tropic", "400"],
     ["Strawberry Crush", "400"],
@@ -195,6 +225,10 @@ const icons = {
   "Iced Coffee": Coffee,
   "Mojito Ades": GlassWater,
   "Ice Cream": IceCream,
+
+  // NEW
+  "Ice Cream Roll": IceCream,
+
   Smoothies: GlassWater,
   Juices: GlassWater,
   Shakes: CupSoda,
@@ -245,7 +279,10 @@ function MenuSection({ title, items, index }) {
             const prices = price.split(" / ");
 
             return (
-              <div className="menu-row" key={name}>
+              <div
+                className="menu-row"
+                key={name}
+              >
                 <div className="item-name">
                   <span>{name}</span>
                 </div>
@@ -265,21 +302,31 @@ function MenuSection({ title, items, index }) {
 }
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [showCategories, setShowCategories] = useState(false);
+  const [activeCategory, setActiveCategory] =
+    useState("All");
+
+  const [showCategories, setShowCategories] =
+    useState(false);
 
   const sections = useMemo(() => {
     if (activeCategory === "All") {
       return Object.entries(menu);
     }
 
-    return [[activeCategory, menu[activeCategory]]];
+    return [
+      [
+        activeCategory,
+        menu[activeCategory],
+      ],
+    ];
   }, [activeCategory]);
 
   const scrollToMenu = () => {
-    document.getElementById("menu")?.scrollIntoView({
-      behavior: "smooth",
-    });
+    document
+      .getElementById("menu")
+      ?.scrollIntoView({
+        behavior: "smooth",
+      });
   };
 
   const selectCategory = (category) => {
@@ -293,21 +340,28 @@ function App() {
 
   return (
     <div className="site-shell">
+
       <div className="pattern pattern-one"></div>
       <div className="pattern pattern-two"></div>
       <div className="pattern pattern-three"></div>
 
-      {/* NAVBAR */}
+      {/* ================= NAVBAR ================= */}
+
       <header className="topbar">
+
         <a
           className="brand"
           href="#home"
           aria-label="Cafe home"
         >
-          <img src="/logo.png" alt="Cafe logo" />
+          <img
+            src="/logo.png"
+            alt="Cafe logo"
+          />
+
           <span className="cafe-name">
-              SPOONED
-           </span>
+            SPOONED
+          </span>
         </a>
 
         <nav className="desktop-nav">
@@ -320,17 +374,23 @@ function App() {
         <button
           className="menu-toggle"
           onClick={() =>
-            setShowCategories(!showCategories)
+            setShowCategories(
+              !showCategories
+            )
           }
         >
           Categories
+
           <ChevronDown size={16} />
         </button>
+
       </header>
 
-      {/* MOBILE CATEGORIES */}
+      {/* ================= MOBILE CATEGORIES ================= */}
+
       {showCategories && (
         <div className="category-popover">
+
           {categories.map((category) => (
             <button
               key={category}
@@ -339,18 +399,28 @@ function App() {
                   ? "active"
                   : ""
               }
-              onClick={() => selectCategory(category)}
+              onClick={() =>
+                selectCategory(category)
+              }
             >
               {category}
             </button>
           ))}
+
         </div>
       )}
 
       <main>
-        {/* HERO */}
-        <section className="hero" id="home">
+
+        {/* ================= HERO ================= */}
+
+        <section
+          className="hero"
+          id="home"
+        >
+
           <div className="hero-copy">
+
             <span className="eyebrow">
               welcome to our little cafe
             </span>
@@ -377,11 +447,15 @@ function App() {
               Explore the menu
               <span>↓</span>
             </button>
+
           </div>
 
-          {/* SMALLER COFFEE ART */}
+          {/* HERO ART */}
+
           <div className="hero-art">
+
             <div className="hero-orbit orbit-one"></div>
+
             <div className="hero-orbit orbit-two"></div>
 
             <div className="hero-badge badge-one">
@@ -397,25 +471,41 @@ function App() {
             </div>
 
             <div className="hero-center">
+
               <div className="hero-center-inner">
+
                 <div className="coffee-cup">
+
                   <div className="coffee-rings">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
         </section>
 
-        {/* ABOUT */}
-        <section className="intro-strip" id="about">
-          <div className="intro-decoration">✦</div>
+        {/* ================= ABOUT ================= */}
+
+        <section
+          className="intro-strip"
+          id="about"
+        >
+
+          <div className="intro-decoration">
+            ✦
+          </div>
 
           <div>
+
             <span className="eyebrow">
               a little note from us
             </span>
@@ -426,14 +516,24 @@ function App() {
               boba and little moments that
               make a cafe feel like home.
             </p>
+
           </div>
 
-          <div className="intro-decoration">♡</div>
+          <div className="intro-decoration">
+            ♡
+          </div>
+
         </section>
 
-        {/* MENU */}
-        <section className="menu-wrap" id="menu">
+        {/* ================= MENU ================= */}
+
+        <section
+          className="menu-wrap"
+          id="menu"
+        >
+
           <div className="menu-title">
+
             <span className="eyebrow">
               freshly made
             </span>
@@ -445,9 +545,13 @@ function App() {
               every craving and every
               little sweet tooth.
             </p>
+
           </div>
 
+          {/* CATEGORY TABS */}
+
           <div className="category-tabs">
+
             {categories.map((category) => (
               <button
                 key={category}
@@ -463,9 +567,13 @@ function App() {
                 {category}
               </button>
             ))}
+
           </div>
 
+          {/* MENU CARDS */}
+
           <div className="menu-grid">
+
             {sections.map(
               ([title, items], index) => (
                 <MenuSection
@@ -476,12 +584,17 @@ function App() {
                 />
               )
             )}
+
           </div>
+
         </section>
 
-        {/* SPECIALS */}
+        {/* ================= SPECIALS ================= */}
+
         <section className="specials">
+
           <div className="special-heading">
+
             <span className="eyebrow">
               little treats
             </span>
@@ -496,10 +609,13 @@ function App() {
               Sweet, creamy, crispy and
               everything in between.
             </p>
+
           </div>
 
           <div className="special-cards">
+
             <div className="special-card pink">
+
               <span>♡</span>
 
               <strong>
@@ -511,9 +627,11 @@ function App() {
               <small>
                 soft • warm • sweet
               </small>
+
             </div>
 
             <div className="special-card cream">
+
               <span>✦</span>
 
               <strong>
@@ -525,9 +643,11 @@ function App() {
               <small>
                 made for sharing
               </small>
+
             </div>
 
             <div className="special-card brown">
+
               <span>☕</span>
 
               <strong>
@@ -539,13 +659,22 @@ function App() {
               <small>
                 the perfect pair
               </small>
+
             </div>
+
           </div>
+
         </section>
 
-        {/* CONTACT */}
-        <section className="contact" id="contact">
+        {/* ================= CONTACT ================= */}
+
+        <section
+          className="contact"
+          id="contact"
+        >
+
           <div className="contact-heading">
+
             <span className="eyebrow">
               come say hello
             </span>
@@ -555,54 +684,80 @@ function App() {
               <br />
               <span>to us.</span>
             </h2>
+
           </div>
 
           <div className="contact-details">
+
             <div className="contact-item">
+
               <MapPin size={21} />
 
               <div>
+
                 <span>Location</span>
-                <p>Muhoho Ave , Nairobi</p>
+
+                <p></p>
+
               </div>
+
             </div>
 
             <div className="contact-item">
+
               <Phone size={21} />
 
               <div>
+
                 <span>Phone</span>
-                <p>+254 777 712 777</p>
+
+                <p></p>
+
               </div>
+
             </div>
 
             <div className="contact-item">
+
               <Mail size={21} />
 
               <div>
+
                 <span>Email</span>
-                <p>spooned@gmail.com</p>
+
+                <p></p>
+
               </div>
+
             </div>
+
           </div>
+
         </section>
+
       </main>
 
-      {/* FOOTER */}
+      {/* ================= FOOTER ================= */}
+
       <footer>
+
         <div className="footer-brand">
+
           <img
             src="/logo.png"
             alt="Cafe logo"
           />
 
           <div>
+
             <strong>SPOONED</strong>
 
             <span>
               every sip, a little happiness.
             </span>
+
           </div>
+
         </div>
 
         <p>
@@ -610,7 +765,9 @@ function App() {
           {" "}
           All rights reserved.
         </p>
+
       </footer>
+
     </div>
   );
 }

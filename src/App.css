@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
+
 /* =========================================================
    COLOURS
 ========================================================= */
 
 :root {
-  /* MIDDLE GREEN — not too light, not too dark */
+  /* MEDIUM / DEEP GREEN */
   --green: #94a57b;
   --green-light: #b7c39e;
   --green-dark: #74865d;
@@ -41,7 +42,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 75px;
+  scroll-padding-top: 70px;
 }
 
 body {
@@ -183,10 +184,10 @@ img {
   justify-content: space-between;
 
   /* SHORTER NAVBAR */
-  min-height: 70px;
+  min-height: 66px;
 
   padding:
-    8px
+    6px
     clamp(15px, 5vw, 70px);
 
   background:
@@ -201,14 +202,14 @@ img {
 
 
 /* =========================================================
-   BRAND / CAFE LOGO + NAME
+   BRAND
 ========================================================= */
 
 .brand {
   display: flex;
   align-items: center;
 
-  gap: 10px;
+  gap: 9px;
 
   min-width: 0;
 
@@ -216,8 +217,8 @@ img {
 }
 
 .brand img {
-  width: 42px;
-  height: 48px;
+  width: 40px;
+  height: 44px;
 
   object-fit: contain;
 
@@ -225,9 +226,13 @@ img {
 }
 
 
-/* CAFE NAME */
+/* =========================================================
+   CAFE NAME
+========================================================= */
 
-.brand-name {
+.cafe-name {
+  display: block;
+
   max-width: 220px;
 
   overflow: hidden;
@@ -323,14 +328,14 @@ img {
 
   z-index: 200;
 
-  top: 68px;
+  top: 64px;
   right: 15px;
 
   width:
     min(330px, calc(100vw - 30px));
 
   max-height:
-    calc(100vh - 90px);
+    calc(100vh - 85px);
 
   overflow-y: auto;
 
@@ -897,13 +902,13 @@ img {
 
 
 /* =========================================================
-   MENU CARDS — SAME COLOUR
+   MENU CARDS
 ========================================================= */
 
 .menu-section {
   position: relative;
 
-  scroll-margin-top: 85px;
+  scroll-margin-top: 80px;
 
   padding:
     clamp(24px, 3vw, 35px);
@@ -1523,10 +1528,10 @@ footer {
 @media (max-width: 700px) {
 
   .topbar {
-    min-height: 66px;
+    min-height: 62px;
 
     padding:
-      7px 15px;
+      6px 15px;
   }
 
   .brand {
@@ -1536,11 +1541,11 @@ footer {
   }
 
   .brand img {
-    width: 40px;
-    height: 44px;
+    width: 38px;
+    height: 42px;
   }
 
-  .brand-name {
+  .cafe-name {
     max-width: calc(100vw - 145px);
 
     font-size:
@@ -1734,10 +1739,10 @@ footer {
 @media (max-width: 480px) {
 
   .topbar {
-    min-height: 62px;
+    min-height: 60px;
 
     padding:
-      6px 12px;
+      5px 12px;
   }
 
   .brand {
@@ -1747,11 +1752,11 @@ footer {
   }
 
   .brand img {
-    width: 36px;
-    height: 40px;
+    width: 34px;
+    height: 38px;
   }
 
-  .brand-name {
+  .cafe-name {
     max-width: calc(100vw - 135px);
 
     font-size:
@@ -1917,15 +1922,17 @@ footer {
 @media (max-width: 360px) {
 
   .topbar {
-    min-height: 60px;
+    min-height: 58px;
   }
 
   .brand img {
-    width: 34px;
-    height: 38px;
+    width: 32px;
+    height: 36px;
   }
 
-  .brand-name {
+  .cafe-name {
+    max-width: calc(100vw - 125px);
+
     font-size: 14px;
   }
 
@@ -1978,7 +1985,7 @@ footer {
 @media (max-height: 500px) and (orientation: landscape) {
 
   .topbar {
-    min-height: 58px;
+    min-height: 56px;
   }
 
   .hero {
