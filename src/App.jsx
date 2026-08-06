@@ -1,61 +1,19 @@
 import { useMemo, useState } from "react";
 import {
-  ArrowDown,
-  ArrowUpRight,
   ChevronDown,
   Mail,
   MapPin,
   Phone,
+  Coffee,
+  CakeSlice,
+  IceCream,
+  CupSoda,
+  Cookie,
+  Utensils,
+  GlassWater,
 } from "lucide-react";
 
 const menu = {
-  "Tea Selection": [
-    ["African Tea", "200"],
-    ["Somali Tea", "250"],
-    ["Iced Tea", "300"],
-    ["Masala Tea", "250"],
-    ["Dawa Tea", "250"],
-    ["Lemon Tea", "200"],
-    ["Ginger Tea", "200"],
-    ["Black Tea", "100"],
-    ["Camel Tea", "250"],
-    ["Hibiscus Tea", "200"],
-    ["Hot Chocolate", "250"],
-    ["Karak Tea", "300"],
-  ],
-
-  "Hot Coffee": [
-    ["Cappuccino", "250 / 280"],
-    ["Latte", "250 / 280"],
-    ["Mocha", "250 / 280"],
-    ["Macchiato", "250 / 280"],
-    ["Espresso", "100 / 150"],
-    ["Americano", "200 / 250"],
-    ["House Coffee", "250 / 280"],
-  ],
-
-  "Iced Coffee": [
-    ["Regular Iced Latte", "300"],
-    ["Vanilla Iced Latte", "350"],
-    ["Caramel Iced Latte", "350"],
-    ["Matcha Latte", "400"],
-    ["Spanish Latte", "400"],
-  ],
-
-  "Flavoured Coffee": [
-    ["Vanilla Latte", "280 / 300"],
-    ["Caramel Latte", "280 / 300"],
-    ["Hazelnut Latte", "280 / 300"],
-    ["Strawberry Latte", "280 / 300"],
-  ],
-
-  Waffles: [
-    ["Belgium Waffle (Plain)", "200"],
-    ["Bubble Waffle (Plain)", "200"],
-    ["Bubble Waffle with Ice Cream", "550"],
-    ["Bubble Waffle with Ice Cream & Fruits", "600"],
-  ],
-
   "Shawarma & Savory Bites": [
     ["Shawarma - Plain", "250"],
     ["Shawarma - Mix", "400"],
@@ -74,6 +32,13 @@ const menu = {
     ["Chicken Strips with Chips", "500"],
     ["Chicken Wings", "450"],
     ["Chicken Wings with Chips", "600"],
+  ],
+
+  Waffles: [
+    ["Belgium Waffle (Plain)", "200"],
+    ["Bubble Waffle (Plain)", "200"],
+    ["Bubble Waffle with Ice Cream", "550"],
+    ["Bubble Waffle with Ice Cream & Fruits", "600"],
   ],
 
   Snacks: [
@@ -99,193 +64,258 @@ const menu = {
     ["Tiramisu Cake", "450"],
     ["White Forest", "300"],
   ],
+
+  Boba: [
+    ["Passion", "350 / 500"],
+    ["Blueberry", "350 / 500"],
+    ["Strawberry", "350 / 500"],
+    ["Lemon", "350 / 500"],
+    ["Peach", "350 / 500"],
+    ["Lychee", "350 / 500"],
+    ["Mango", "350 / 500"],
+    ["Green Apple", "350 / 500"],
+    ["Kiwi", "350 / 500"],
+    ["Fusion Double", "350 / 500"],
+    ["Fusion Triple", "350 / 500"],
+  ],
+
+  "Milk Boba": [
+    ["Vanilla", "550"],
+    ["Chocolate", "550"],
+    ["Taro", "600"],
+    ["Matcha", "600"],
+    ["Strawberry", "600"],
+    ["Caramel", "600"],
+    ["Tiger", "600"],
+  ],
+
+  "Tea Selection": [
+    ["African Tea", "200"],
+    ["Somali Tea", "250"],
+    ["Iced Tea", "300"],
+    ["Masala Tea", "250"],
+    ["Dawa Tea", "250"],
+    ["Lemon Tea", "200"],
+    ["Ginger Tea", "200"],
+    ["Black Tea", "100"],
+    ["Camel Tea", "250"],
+    ["Hibiscus Tea", "200"],
+    ["Hot Chocolate", "250"],
+    ["Karak Tea", "300"],
+  ],
+
+  "Hot Coffee": [
+    ["Cappuccino", "250 / 280"],
+    ["Latte", "250 / 280"],
+    ["Mocha", "250 / 280"],
+    ["Macchiato", "250 / 280"],
+    ["Espresso", "100 / 150"],
+    ["Americano", "200 / 250"],
+    ["House Coffee", "250 / 280"],
+  ],
+
+  "Flavoured Coffee": [
+    ["Vanilla Latte", "280 / 300"],
+    ["Caramel Latte", "280 / 300"],
+    ["Hazelnut Latte", "280 / 300"],
+    ["Strawberry Latte", "280 / 300"],
+  ],
+
+  "Iced Coffee": [
+    ["Regular Iced Latte", "300"],
+    ["Vanilla Iced Latte", "350"],
+    ["Caramel Iced Latte", "350"],
+    ["Matcha Latte", "400"],
+    ["Spanish Latte", "400"],
+  ],
+
+  "Mojito Ades": [
+    ["Passion", "400"],
+    ["Blueberry", "400"],
+    ["Strawberry", "400"],
+    ["Lemon", "400"],
+    ["Peach", "400"],
+    ["Lychee", "400"],
+    ["Mango", "400"],
+    ["Green Apple", "400"],
+    ["Virgin", "400"],
+    ["Vision", "400"],
+    ["Healthy", "400"],
+    ["Blue Lagoon", "400"],
+  ],
+
+  "Ice Cream": [
+    ["Single Scoop (Cone/Cup)", "250"],
+    ["Double Scoop (Cone/Cup)", "400"],
+    ["Triple Scoop (Cone/Cup)", "550"],
+    ["Soft Ice Cream (Cone)", "200"],
+    ["Soft Ice Cream (Cup)", "300"],
+    ["Toppings", "50"],
+  ],
+
+  Smoothies: [
+    ["Mango Tropic", "400"],
+    ["Strawberry Crush", "400"],
+    ["Date Smoothie", "400"],
+    ["Mango Lassie", "500"],
+    ["Strawberry Lassie", "600"],
+  ],
+
+  Juices: [
+    ["Passion", "400"],
+    ["Blueberry", "400"],
+    ["Strawberry", "400"],
+    ["Lemon", "400"],
+  ],
+
+  Shakes: [
+    ["Vanilla", "250"],
+    ["Strawberry", "400"],
+    ["Chocolate", "550"],
+    ["Premium Flavours", "200"],
+  ],
+
+  Sundaes: [
+    ["Brownie Sundae", "250"],
+    ["Biscuit Sundae", "400"],
+    ["Oreo Sundae", "550"],
+  ],
+};
+
+const icons = {
+  "Shawarma & Savory Bites": Utensils,
+  Waffles: Cookie,
+  Snacks: Cookie,
+  Cakes: CakeSlice,
+  Boba: CupSoda,
+  "Milk Boba": CupSoda,
+  "Tea Selection": Coffee,
+  "Hot Coffee": Coffee,
+  "Flavoured Coffee": Coffee,
+  "Iced Coffee": Coffee,
+  "Mojito Ades": GlassWater,
+  "Ice Cream": IceCream,
+  Smoothies: GlassWater,
+  Juices: GlassWater,
+  Shakes: CupSoda,
+  Sundaes: IceCream,
 };
 
 const categories = ["All", ...Object.keys(menu)];
 
+function MenuSection({ title, items, index }) {
+  const Icon = icons[title] || Coffee;
 
-// ==============================
-// MENU SECTION COMPONENT
-// ==============================
-
-function MenuSection({ title, items }) {
   const isCoffee =
     title === "Hot Coffee" ||
     title === "Flavoured Coffee";
+
+  const hasTwoPrices =
+    isCoffee || title === "Boba";
 
   return (
     <section
       className="menu-section"
       id={title.toLowerCase().replaceAll(" ", "-")}
     >
-      <div className="section-heading">
+      <div className="category-icon">
+        <Icon size={21} strokeWidth={2} />
+      </div>
 
-        <div>
-          <span className="eyebrow">
-            freshly made
-          </span>
+      <div className="section-card">
+        <div className="section-heading">
+          <div>
+            <span className="section-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
 
-          <h2>{title}</h2>
+            <h2>{title}</h2>
+          </div>
+
+          {hasTwoPrices && (
+            <div className="price-note">
+              <span>Small</span>
+              <span>Large</span>
+            </div>
+          )}
         </div>
 
+        <div className="menu-list">
+          {items.map(([name, price]) => {
+            const prices = price.split(" / ");
 
-        {isCoffee && (
-          <div className="price-note">
-            <span>Small / Single</span>
-            <span>Large / Double</span>
-          </div>
-        )}
+            return (
+              <div className="menu-row" key={name}>
+                <div className="item-name">
+                  <span>{name}</span>
+                </div>
 
-      </div>
-
-
-      <div className="menu-list">
-
-        {items.map(([name, price]) => {
-
-          const prices = price.split(" / ");
-
-          return (
-            <div
-              className="menu-row"
-              key={name}
-            >
-
-              <div className="item-name">
-
-                <span className="item-dot"></span>
-
-                <span>{name}</span>
-
+                <div className="item-price">
+                  {prices.map((p, i) => (
+                    <span key={i}>{p}</span>
+                  ))}
+                </div>
               </div>
-
-
-              <div className="item-price">
-
-                {prices.map((p, index) => (
-                  <span key={index}>
-                    {p}
-                  </span>
-                ))}
-
-              </div>
-
-            </div>
-          );
-        })}
-
+            );
+          })}
+        </div>
       </div>
-
     </section>
   );
 }
 
-
-// ==============================
-// MAIN APP
-// ==============================
-
 function App() {
-
-  const [activeCategory, setActiveCategory] =
-    useState("All");
-
-  const [showCategories, setShowCategories] =
-    useState(false);
-
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [showCategories, setShowCategories] = useState(false);
 
   const sections = useMemo(() => {
-
     if (activeCategory === "All") {
       return Object.entries(menu);
     }
 
-    return [
-      [
-        activeCategory,
-        menu[activeCategory],
-      ],
-    ];
-
+    return [[activeCategory, menu[activeCategory]]];
   }, [activeCategory]);
 
-
   const scrollToMenu = () => {
-
-    document
-      .getElementById("menu")
-      ?.scrollIntoView({
-        behavior: "smooth",
-      });
-
+    document.getElementById("menu")?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
+  const selectCategory = (category) => {
+    setActiveCategory(category);
+    setShowCategories(false);
+
+    setTimeout(() => {
+      scrollToMenu();
+    }, 50);
+  };
 
   return (
     <div className="site-shell">
+      <div className="pattern pattern-one"></div>
+      <div className="pattern pattern-two"></div>
+      <div className="pattern pattern-three"></div>
 
-
-      {/* =========================
-          DECORATIVE BACKGROUND
-      ========================= */}
-
-      <div className="decor decor-one"></div>
-
-      <div className="decor decor-two"></div>
-
-      <div className="decor decor-three"></div>
-
-
-
-      {/* =========================
-          NAVBAR
-      ========================= */}
-
+      {/* NAVBAR */}
       <header className="topbar">
-
-
-        {/* LOGO */}
-
         <a
           className="brand"
           href="#home"
           aria-label="Cafe home"
         >
-
-          <img
-            src="/logo.png"
-            alt="Cafe logo"
-          />
-
+          <img src="/logo.png" alt="Cafe logo" />
+          <span className="cafe-name">
+              SPOONED
+           </span>
         </a>
 
-
-
-        {/* DESKTOP NAVIGATION */}
-
         <nav className="desktop-nav">
-
-          <a href="#home">
-            Home
-          </a>
-
-          <a href="#menu">
-            Menu
-          </a>
-
-          <a href="#about">
-            Our Story
-          </a>
-
-          <a href="#contact">
-            Contact
-          </a>
-
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">Our Story</a>
+          <a href="#contact">Contact</a>
         </nav>
-
-
-
-        {/* MOBILE CATEGORY BUTTON */}
 
         <button
           className="menu-toggle"
@@ -293,551 +323,296 @@ function App() {
             setShowCategories(!showCategories)
           }
         >
-
           Categories
-
-          <ChevronDown size={17} />
-
+          <ChevronDown size={16} />
         </button>
-
       </header>
 
-
-
-      {/* =========================
-          MOBILE CATEGORY POPUP
-      ========================= */}
-
+      {/* MOBILE CATEGORIES */}
       {showCategories && (
-
         <div className="category-popover">
-
           {categories.map((category) => (
-
             <button
               key={category}
-
               className={
                 activeCategory === category
                   ? "active"
                   : ""
               }
-
-              onClick={() => {
-
-                setActiveCategory(category);
-
-                setShowCategories(false);
-
-                setTimeout(
-                  scrollToMenu,
-                  50
-                );
-
-              }}
+              onClick={() => selectCategory(category)}
             >
-
               {category}
-
             </button>
-
           ))}
-
         </div>
-
       )}
 
-
-
       <main>
-
-
-        {/* =========================
-            HERO
-        ========================= */}
-
-        <section
-          className="hero"
-          id="home"
-        >
-
+        {/* HERO */}
+        <section className="hero" id="home">
           <div className="hero-copy">
-
             <span className="eyebrow">
-              welcome to our little corner
+              welcome to our little cafe
             </span>
 
-
             <h1>
-
               every sip
-
               <br />
-
-              <em>
-                is a little
-              </em>
-
+              <span>is a little</span>
               <br />
-
               moment of happiness.
-
             </h1>
 
-
             <p>
-              Coffee, tea, sweet treats and
-              savory bites — made to turn an
-              ordinary day into a good one.
+              Coffee, tea, boba, sweet treats
+              and savoury bites — made for
+              good moments and even better
+              company.
             </p>
-
 
             <button
               className="primary-button"
               onClick={scrollToMenu}
             >
-
               Explore the menu
-
-              <ArrowDown size={17} />
-
+              <span>↓</span>
             </button>
-
           </div>
 
-
-
-          {/* HERO DECORATION */}
-
+          {/* SMALLER COFFEE ART */}
           <div className="hero-art">
+            <div className="hero-orbit orbit-one"></div>
+            <div className="hero-orbit orbit-two"></div>
 
-            <div className="art-circle large">
-
-              <div className="coffee-cup">
-
-                <span className="cup-latte"></span>
-
-              </div>
-
-            </div>
-
-
-            <div className="floating-card card-one">
+            <div className="hero-badge badge-one">
               ☕
             </div>
 
-            <div className="floating-card card-two">
+            <div className="hero-badge badge-two">
               ♡
             </div>
 
-            <div className="floating-card card-three">
+            <div className="hero-badge badge-three">
               ✦
             </div>
 
+            <div className="hero-center">
+              <div className="hero-center-inner">
+                <div className="coffee-cup">
+                  <div className="coffee-rings">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
         </section>
 
-
-
-        {/* =========================
-            INTRODUCTION
-        ========================= */}
-
-        <section
-          className="intro-strip"
-          id="about"
-        >
-
-          <div className="strip-icon">
-            ✦
-          </div>
-
+        {/* ABOUT */}
+        <section className="intro-strip" id="about">
+          <div className="intro-decoration">✦</div>
 
           <div>
-
             <span className="eyebrow">
               a little note from us
             </span>
 
-
             <p>
               Come for the coffee. Stay for
-              the conversations, the pastries,
-              the cozy corners and the tiny
-              moments that make a cafe feel
-              like home.
+              the conversations, pastries,
+              boba and little moments that
+              make a cafe feel like home.
             </p>
-
           </div>
 
-
-          <div className="strip-icon">
-            ♡
-          </div>
-
+          <div className="intro-decoration">♡</div>
         </section>
 
-
-
-        {/* =========================
-            MENU
-        ========================= */}
-
-        <section
-          className="menu-wrap"
-          id="menu"
-        >
-
+        {/* MENU */}
+        <section className="menu-wrap" id="menu">
           <div className="menu-title">
-
             <span className="eyebrow">
-              made with love
+              freshly made
             </span>
 
-
-            <h2>
-              Our Menu
-            </h2>
-
+            <h2>MENU</h2>
 
             <p>
-              Pick your favourite. Or don't —
-              there's always tomorrow.
+              Something for every mood,
+              every craving and every
+              little sweet tooth.
             </p>
-
           </div>
 
-
-
-          {/* CATEGORY BUTTONS */}
-
           <div className="category-tabs">
-
             {categories.map((category) => (
-
               <button
                 key={category}
-
                 className={
                   activeCategory === category
                     ? "active"
                     : ""
                 }
-
                 onClick={() =>
                   setActiveCategory(category)
                 }
               >
-
                 {category}
-
               </button>
-
             ))}
-
           </div>
 
-
-
-          {/* MENU ITEMS */}
-
           <div className="menu-grid">
-
             {sections.map(
-              ([title, items]) => (
-
+              ([title, items], index) => (
                 <MenuSection
                   key={title}
                   title={title}
                   items={items}
+                  index={index}
                 />
-
               )
             )}
-
           </div>
-
         </section>
 
-
-
-        {/* =========================
-            SPECIALS
-        ========================= */}
-
+        {/* SPECIALS */}
         <section className="specials">
-
-          <div className="special-copy">
-
+          <div className="special-heading">
             <span className="eyebrow">
-              something sweet
+              little treats
             </span>
 
-
             <h2>
-
-              Little treats,
-
+              Good food.
               <br />
-
-              big mood.
-
+              Good mood.
             </h2>
 
-
             <p>
-              Our cakes, cinnamon rolls,
-              waffles and little bites are
-              perfect with your favourite cup.
+              Sweet, creamy, crispy and
+              everything in between.
             </p>
-
-
-            <button
-              className="outline-button"
-
-              onClick={() => {
-
-                setActiveCategory("Snacks");
-
-                setTimeout(
-                  scrollToMenu,
-                  50
-                );
-
-              }}
-            >
-
-              See snacks
-
-              <ArrowUpRight size={17} />
-
-            </button>
-
           </div>
 
-
-
-          <div className="treat-grid">
-
-
-            <div className="treat-card treat-pink">
-
-              <span>
-                ♡
-              </span>
+          <div className="special-cards">
+            <div className="special-card pink">
+              <span>♡</span>
 
               <strong>
                 Cinnamon
                 <br />
-                rolls
+                Rolls
               </strong>
 
               <small>
                 soft • warm • sweet
               </small>
-
             </div>
 
-
-
-            <div className="treat-card treat-green">
-
-              <span>
-                ✦
-              </span>
+            <div className="special-card cream">
+              <span>✦</span>
 
               <strong>
                 Waffles
                 <br />
-                & ice cream
+                & Ice Cream
               </strong>
 
               <small>
                 made for sharing
               </small>
-
             </div>
 
-
-
-            <div className="treat-card treat-brown">
-
-              <span>
-                ☕
-              </span>
+            <div className="special-card brown">
+              <span>☕</span>
 
               <strong>
                 Coffee
                 <br />
-                & cake
+                & Cake
               </strong>
 
               <small>
                 the perfect pair
               </small>
-
             </div>
-
-
           </div>
-
         </section>
 
-
-
-        {/* =========================
-            CONTACT
-        ========================= */}
-
-        <section
-          className="contact"
-          id="contact"
-        >
-
-
+        {/* CONTACT */}
+        <section className="contact" id="contact">
           <div className="contact-heading">
-
             <span className="eyebrow">
               come say hello
             </span>
 
-
             <h2>
-
               Find your way
-
               <br />
-
-              <em>
-                to us.
-              </em>
-
+              <span>to us.</span>
             </h2>
-
           </div>
-
-
 
           <div className="contact-details">
-
-
-            {/* ADDRESS */}
-
             <div className="contact-item">
-
-              <MapPin size={20} />
+              <MapPin size={21} />
 
               <div>
-
-                <span>
-                  Location
-                </span>
-
-                <p>
-                  Muhoho Ave , Nairobi
-                </p>
-
+                <span>Location</span>
+                <p>Muhoho Ave , Nairobi</p>
               </div>
-
             </div>
-
-
-
-            {/* PHONE */}
 
             <div className="contact-item">
-
-              <Phone size={20} />
+              <Phone size={21} />
 
               <div>
-
-                <span>
-                  Phone
-                </span>
-
-                <p>
-                  +254 777 712 777
-                </p>
-
+                <span>Phone</span>
+                <p>+254 777 712 777</p>
               </div>
-
             </div>
-
-
-
-            {/* EMAIL */}
 
             <div className="contact-item">
-
-              <Mail size={20} />
+              <Mail size={21} />
 
               <div>
-
-                <span>
-                  Email
-                </span>
-
-                <p>
-                  spooned@gmail.com
-                </p>
-
+                <span>Email</span>
+                <p>spooned@gmail.com</p>
               </div>
-
             </div>
-
-
           </div>
-
         </section>
-
       </main>
 
-
-
-      {/* =========================
-          FOOTER
-      ========================= */}
-
+      {/* FOOTER */}
       <footer>
-
         <div className="footer-brand">
-
-
           <img
             src="/logo.png"
             alt="Cafe logo"
           />
 
-
           <div>
-
-            <strong>
-              Spooned 
-            </strong>
+            <strong>SPOONED</strong>
 
             <span>
               every sip, a little happiness.
             </span>
-
           </div>
-
         </div>
 
-
         <p>
-          © {new Date().getFullYear()}
+          © {new Date().getFullYear()} SPOONED.
           {" "}
-          spooned.
           All rights reserved.
         </p>
-
       </footer>
-
-
     </div>
   );
 }
-
 
 export default App;
