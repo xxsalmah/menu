@@ -5,9 +5,10 @@
 ========================================================= */
 
 :root {
-  --green: #a5b28c;
-  --green-light: #c0c9aa;
-  --green-dark: #87966f;
+  /* DEEPER SAGE GREEN */
+  --green: #87966f;
+  --green-light: #a9b593;
+  --green-dark: #657650;
 
   --cream: #fffaf0;
   --cream-dark: #f3ead8;
@@ -47,6 +48,7 @@ body {
   font-family: "DM Sans", sans-serif;
   color: var(--brown);
   background: var(--green);
+
   overflow-x: hidden;
 }
 
@@ -89,35 +91,35 @@ img {
     radial-gradient(
       ellipse 180px 300px at 8% 15%,
       transparent 0 45%,
-      rgba(192, 201, 170, 0.8) 46% 61%,
+      rgba(169, 181, 147, 0.65) 46% 61%,
       transparent 62%
     ),
 
     radial-gradient(
       ellipse 300px 180px at 92% 10%,
       transparent 0 43%,
-      rgba(192, 201, 170, 0.8) 44% 58%,
+      rgba(169, 181, 147, 0.65) 44% 58%,
       transparent 59%
     ),
 
     radial-gradient(
       ellipse 250px 350px at 20% 55%,
       transparent 0 48%,
-      rgba(192, 201, 170, 0.75) 49% 63%,
+      rgba(169, 181, 147, 0.6) 49% 63%,
       transparent 64%
     ),
 
     radial-gradient(
       ellipse 300px 190px at 95% 70%,
       transparent 0 45%,
-      rgba(192, 201, 170, 0.75) 46% 59%,
+      rgba(169, 181, 147, 0.6) 46% 59%,
       transparent 60%
     ),
 
     radial-gradient(
       ellipse 230px 300px at 8% 90%,
       transparent 0 46%,
-      rgba(192, 201, 170, 0.8) 47% 62%,
+      rgba(169, 181, 147, 0.65) 47% 62%,
       transparent 63%
     );
 
@@ -151,13 +153,13 @@ img {
 
   pointer-events: none;
 
-  opacity: 0.35;
+  opacity: 0.28;
 
   background-image:
     radial-gradient(
       ellipse at center,
       transparent 0 45%,
-      rgba(135, 150, 111, 0.35) 46% 52%,
+      rgba(101, 118, 80, 0.35) 46% 52%,
       transparent 53%
     );
 
@@ -169,7 +171,6 @@ img {
 
 /* =========================================================
    NAVBAR
-   SHORTER + RESPONSIVE CAFE NAME
 ========================================================= */
 
 .topbar {
@@ -182,15 +183,15 @@ img {
   align-items: center;
   justify-content: space-between;
 
-  /* SHORTER */
-  min-height: 68px;
+  /* slightly shorter */
+  min-height: 72px;
 
   padding:
     8px
     clamp(18px, 5vw, 70px);
 
   background:
-    rgba(255, 250, 240, 0.95);
+    rgba(255, 250, 240, 0.96);
 
   border-bottom:
     2px solid
@@ -201,14 +202,14 @@ img {
 
 
 /* =========================================================
-   BRAND / LOGO + CAFE NAME
+   NAV LOGO + CAFE NAME
 ========================================================= */
 
 .brand {
   display: flex;
   align-items: center;
 
-  gap: clamp(7px, 1vw, 13px);
+  gap: 10px;
 
   min-width: 0;
 
@@ -216,7 +217,7 @@ img {
 }
 
 .brand img {
-  width: 43px;
+  width: 44px;
   height: 48px;
 
   object-fit: contain;
@@ -225,33 +226,31 @@ img {
 }
 
 
-/* CAFE NAME */
+/* RESPONSIVE CAFE NAME */
 
-.cafe-name {
-  display: block;
+.brand-name {
+  min-width: 0;
 
-  max-width: clamp(100px, 15vw, 210px);
-
-  overflow: hidden;
-
-  white-space: nowrap;
-
-  text-overflow: ellipsis;
-
-  color: var(--brown);
+  max-width: clamp(110px, 18vw, 220px);
 
   font-family:
     "Playfair Display",
     serif;
 
   font-size:
-    clamp(15px, 1.7vw, 23px);
+    clamp(15px, 2vw, 23px);
 
   font-weight: 600;
 
-  line-height: 1;
+  line-height: 1.05;
 
-  letter-spacing: -0.02em;
+  color: var(--brown);
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
 }
 
 
@@ -270,8 +269,6 @@ img {
   font-size: 13px;
 
   font-weight: 700;
-
-  flex-shrink: 0;
 }
 
 .desktop-nav a {
@@ -295,7 +292,6 @@ img {
   display: none;
 
   align-items: center;
-
   gap: 7px;
 
   border:
@@ -327,7 +323,7 @@ img {
 
   z-index: 200;
 
-  top: 70px;
+  top: 68px;
   right: 15px;
 
   width:
@@ -401,7 +397,9 @@ img {
 }
 
 
-/* HERO TEXT */
+/* =========================================================
+   HERO TEXT
+========================================================= */
 
 .hero-copy {
   max-width: 650px;
@@ -510,15 +508,17 @@ img {
 
   width: 100%;
 
-  max-width: 380px;
+  max-width: 360px;
 
-  min-height: 380px;
+  min-height: 360px;
 
   margin: 0 auto;
 }
 
 
-/* ORBIT CIRCLES */
+/* =========================================================
+   ORBIT CIRCLES
+========================================================= */
 
 .hero-orbit {
   position: absolute;
@@ -536,19 +536,21 @@ img {
 }
 
 .orbit-one {
-  width: 285px;
-  height: 285px;
+  width: 270px;
+  height: 270px;
 }
 
 .orbit-two {
-  width: 330px;
-  height: 330px;
+  width: 315px;
+  height: 315px;
 
   opacity: 0.55;
 }
 
 
-/* CENTER CUP */
+/* =========================================================
+   CENTER CUP
+========================================================= */
 
 .hero-center {
   position: absolute;
@@ -556,8 +558,8 @@ img {
   left: 50%;
   top: 50%;
 
-  width: 210px;
-  height: 210px;
+  width: 195px;
+  height: 195px;
 
   transform: translate(-50%, -50%);
 
@@ -575,8 +577,8 @@ img {
 }
 
 .hero-center-inner {
-  width: 175px;
-  height: 175px;
+  width: 160px;
+  height: 160px;
 
   display: grid;
 
@@ -589,7 +591,9 @@ img {
 }
 
 
-/* COFFEE CUP */
+/* =========================================================
+   COFFEE CUP
+========================================================= */
 
 .coffee-cup {
   position: relative;
@@ -598,8 +602,8 @@ img {
 
   place-items: center;
 
-  width: 105px;
-  height: 80px;
+  width: 98px;
+  height: 74px;
 
   border-radius:
     0 0 45% 45%;
@@ -616,11 +620,11 @@ img {
 
   position: absolute;
 
-  right: -22px;
-  top: 22px;
+  right: -20px;
+  top: 20px;
 
-  width: 28px;
-  height: 40px;
+  width: 26px;
+  height: 37px;
 
   border:
     7px solid
@@ -633,8 +637,8 @@ img {
 }
 
 .coffee-rings {
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
 
   display: grid;
 
@@ -655,7 +659,9 @@ img {
 }
 
 
-/* HERO BADGES */
+/* =========================================================
+   HERO BADGES
+========================================================= */
 
 .hero-badge {
   position: absolute;
@@ -891,13 +897,14 @@ img {
 
 
 /* =========================================================
-   MENU CARDS - SAME COLOUR
+   MENU CARDS
+   ALL SAME COLOUR
 ========================================================= */
 
 .menu-section {
   position: relative;
 
-  scroll-margin-top: 85px;
+  scroll-margin-top: 90px;
 
   padding:
     clamp(24px, 3vw, 35px);
@@ -919,9 +926,13 @@ img {
     box-shadow 0.2s ease;
 }
 
+
+/* FORCE ALL CARDS TO SAME COLOUR */
+
 .menu-section.dark-card,
 .menu-section.pink-card {
   background: var(--cream);
+
   color: var(--brown);
 }
 
@@ -1147,7 +1158,9 @@ img {
 }
 
 
-/* SPECIAL CARDS */
+/* =========================================================
+   SPECIAL CARDS
+========================================================= */
 
 .special-cards {
   display: grid;
@@ -1204,7 +1217,10 @@ img {
   text-transform: uppercase;
 }
 
-.special-card.pink,
+.special-card.pink {
+  background: var(--cream);
+}
+
 .special-card.cream {
   background: var(--cream);
 }
@@ -1438,8 +1454,6 @@ footer {
     display: flex;
   }
 
-  /* HERO */
-
   .hero {
     grid-template-columns: 1fr;
 
@@ -1470,8 +1484,6 @@ footer {
     transform: scale(0.85);
   }
 
-  /* MENU */
-
   .menu-grid {
     grid-template-columns: 1fr;
 
@@ -1480,8 +1492,6 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-
-  /* SPECIALS */
 
   .specials {
     grid-template-columns: 1fr;
@@ -1500,8 +1510,6 @@ footer {
     margin-right: auto;
   }
 
-  /* CONTACT */
-
   .contact {
     grid-template-columns: 1fr;
 
@@ -1517,23 +1525,28 @@ footer {
 @media (max-width: 700px) {
 
   .topbar {
-    min-height: 62px;
+    min-height: 66px;
 
     padding:
-      6px 15px;
+      7px 15px;
+  }
+
+  .brand {
+    gap: 8px;
   }
 
   .brand img {
-    width: 40px;
-    height: 43px;
+    width: 42px;
+    height: 44px;
   }
 
-  .cafe-name {
-    max-width: 160px;
+  .brand-name {
+    max-width: 180px;
 
     font-size:
       clamp(14px, 4vw, 19px);
   }
+
 
   /* HERO */
 
@@ -1551,6 +1564,7 @@ footer {
     font-size: 13px;
   }
 
+
   /* SMALLER HERO ART */
 
   .hero-art {
@@ -1558,6 +1572,7 @@ footer {
 
     transform: scale(0.78);
   }
+
 
   /* INTRO */
 
@@ -1578,6 +1593,7 @@ footer {
     justify-self: center;
   }
 
+
   /* MENU */
 
   .menu-wrap {
@@ -1593,6 +1609,7 @@ footer {
     font-size:
       clamp(48px, 15vw, 65px);
   }
+
 
   /* CATEGORY SCROLL */
 
@@ -1619,6 +1636,7 @@ footer {
     flex:
       0 0 auto;
   }
+
 
   /* MENU CARD */
 
@@ -1657,6 +1675,7 @@ footer {
     min-width: 65px;
   }
 
+
   /* SPECIALS */
 
   .specials {
@@ -1677,6 +1696,7 @@ footer {
     min-height: 190px;
   }
 
+
   /* CONTACT */
 
   .contact {
@@ -1692,6 +1712,7 @@ footer {
   .contact-item {
     padding: 18px;
   }
+
 
   /* FOOTER */
 
@@ -1713,38 +1734,35 @@ footer {
 @media (max-width: 480px) {
 
   .topbar {
-    min-height: 58px;
+    min-height: 62px;
 
     padding:
-      5px 12px;
+      6px 12px;
   }
 
   .brand {
-    gap: 6px;
+    gap: 7px;
   }
 
   .brand img {
-    width: 36px;
-    height: 40px;
+    width: 39px;
+    height: 41px;
   }
 
-  /* CAFE NAME */
-
-  .cafe-name {
-    max-width: 125px;
+  .brand-name {
+    max-width: 145px;
 
     font-size:
-      clamp(12px, 4vw, 16px);
-
-    letter-spacing: -0.025em;
+      clamp(13px, 4vw, 17px);
   }
 
   .menu-toggle {
     padding:
       7px 11px;
 
-    font-size: 10px;
+    font-size: 11px;
   }
+
 
   /* HERO */
 
@@ -1775,6 +1793,7 @@ footer {
     font-size: 11px;
   }
 
+
   /* EVEN SMALLER COFFEE ART */
 
   .hero-art {
@@ -1782,6 +1801,7 @@ footer {
 
     transform: scale(0.68);
   }
+
 
   /* INTRO */
 
@@ -1793,6 +1813,7 @@ footer {
   .intro-strip p {
     font-size: 17px;
   }
+
 
   /* MENU */
 
@@ -1843,6 +1864,7 @@ footer {
     gap: 7px;
   }
 
+
   /* SPECIALS */
 
   .specials {
@@ -1858,6 +1880,7 @@ footer {
   .special-heading p {
     font-size: 12px;
   }
+
 
   /* CONTACT */
 
@@ -1876,6 +1899,7 @@ footer {
     font-size: 12px;
   }
 
+
   /* FOOTER */
 
   footer {
@@ -1891,32 +1915,25 @@ footer {
 @media (max-width: 360px) {
 
   .topbar {
-    min-height: 55px;
-
-    padding:
-      4px 9px;
-  }
-
-  .brand {
-    gap: 5px;
+    min-height: 60px;
   }
 
   .brand img {
-    width: 32px;
-    height: 36px;
+    width: 36px;
+    height: 38px;
   }
 
-  .cafe-name {
-    max-width: 105px;
+  .brand-name {
+    max-width: 120px;
 
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .menu-toggle {
     padding:
       6px 9px;
 
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .hero h1 {
@@ -1961,7 +1978,7 @@ footer {
 @media (max-height: 500px) and (orientation: landscape) {
 
   .topbar {
-    min-height: 55px;
+    min-height: 58px;
   }
 
   .hero {
@@ -2005,9 +2022,7 @@ a:focus-visible {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
-
     animation-iteration-count: 1 !important;
-
     transition-duration: 0.01ms !important;
   }
 }
