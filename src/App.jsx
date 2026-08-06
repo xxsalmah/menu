@@ -481,9 +481,8 @@ function App() {
             <h2>MENU</h2>
 
             <p>
-              Something for every mood,
-              every craving and every
-              little sweet tooth.
+              Pick your favourite. Or don't —
+              there's always tomorrow.
             </p>
           </div>
 
@@ -590,7 +589,7 @@ function App() {
         >
           <div className="contact-heading">
             <span className="eyebrow">
-              come say hello
+              come say hello  
             </span>
 
             <h2>
@@ -606,7 +605,7 @@ function App() {
 
               <div>
                 <span>Location</span>
-                <p></p>
+                <p>Muhoho Ave, Nairobi</p>
               </div>
             </div>
 
@@ -615,7 +614,7 @@ function App() {
 
               <div>
                 <span>Phone</span>
-                <p></p>
+                <p>+254 777 712 777</p>
               </div>
             </div>
 
@@ -624,7 +623,7 @@ function App() {
 
               <div>
                 <span>Email</span>
-                <p></p>
+                <p>spooned@gmail.com</p>
               </div>
             </div>
           </div>
