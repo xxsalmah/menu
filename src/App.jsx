@@ -828,7 +828,7 @@ function App() {
         <p>
           © {new Date().getFullYear()}
           {" "}
-          Cafe Name.
+          spooned.
           All rights reserved.
         </p>
 
