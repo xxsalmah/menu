@@ -5,10 +5,10 @@
 ========================================================= */
 
 :root {
-  /* DEEPER SAGE GREEN */
-  --green: #87966f;
-  --green-light: #a9b593;
-  --green-dark: #657650;
+  /* MIDDLE GREEN — not too light, not too dark */
+  --green: #94a57b;
+  --green-light: #b7c39e;
+  --green-dark: #74865d;
 
   --cream: #fffaf0;
   --cream-dark: #f3ead8;
@@ -48,7 +48,6 @@ body {
   font-family: "DM Sans", sans-serif;
   color: var(--brown);
   background: var(--green);
-
   overflow-x: hidden;
 }
 
@@ -91,35 +90,35 @@ img {
     radial-gradient(
       ellipse 180px 300px at 8% 15%,
       transparent 0 45%,
-      rgba(169, 181, 147, 0.65) 46% 61%,
+      rgba(183, 195, 158, 0.75) 46% 61%,
       transparent 62%
     ),
 
     radial-gradient(
       ellipse 300px 180px at 92% 10%,
       transparent 0 43%,
-      rgba(169, 181, 147, 0.65) 44% 58%,
+      rgba(183, 195, 158, 0.75) 44% 58%,
       transparent 59%
     ),
 
     radial-gradient(
       ellipse 250px 350px at 20% 55%,
       transparent 0 48%,
-      rgba(169, 181, 147, 0.6) 49% 63%,
+      rgba(183, 195, 158, 0.7) 49% 63%,
       transparent 64%
     ),
 
     radial-gradient(
       ellipse 300px 190px at 95% 70%,
       transparent 0 45%,
-      rgba(169, 181, 147, 0.6) 46% 59%,
+      rgba(183, 195, 158, 0.7) 46% 59%,
       transparent 60%
     ),
 
     radial-gradient(
       ellipse 230px 300px at 8% 90%,
       transparent 0 46%,
-      rgba(169, 181, 147, 0.65) 47% 62%,
+      rgba(183, 195, 158, 0.75) 47% 62%,
       transparent 63%
     );
 
@@ -153,13 +152,13 @@ img {
 
   pointer-events: none;
 
-  opacity: 0.28;
+  opacity: 0.30;
 
   background-image:
     radial-gradient(
       ellipse at center,
       transparent 0 45%,
-      rgba(101, 118, 80, 0.35) 46% 52%,
+      rgba(116, 134, 93, 0.35) 46% 52%,
       transparent 53%
     );
 
@@ -183,12 +182,12 @@ img {
   align-items: center;
   justify-content: space-between;
 
-  /* slightly shorter */
-  min-height: 72px;
+  /* SHORTER NAVBAR */
+  min-height: 70px;
 
   padding:
     8px
-    clamp(18px, 5vw, 70px);
+    clamp(15px, 5vw, 70px);
 
   background:
     rgba(255, 250, 240, 0.96);
@@ -202,7 +201,7 @@ img {
 
 
 /* =========================================================
-   NAV LOGO + CAFE NAME
+   BRAND / CAFE LOGO + NAME
 ========================================================= */
 
 .brand {
@@ -217,7 +216,7 @@ img {
 }
 
 .brand img {
-  width: 44px;
+  width: 42px;
   height: 48px;
 
   object-fit: contain;
@@ -226,29 +225,27 @@ img {
 }
 
 
-/* RESPONSIVE CAFE NAME */
+/* CAFE NAME */
 
 .brand-name {
-  min-width: 0;
+  max-width: 220px;
 
-  max-width: clamp(110px, 18vw, 220px);
+  overflow: hidden;
+
+  color: var(--brown);
 
   font-family:
     "Playfair Display",
     serif;
 
   font-size:
-    clamp(15px, 2vw, 23px);
+    clamp(17px, 2.2vw, 25px);
 
   font-weight: 600;
 
-  line-height: 1.05;
-
-  color: var(--brown);
+  line-height: 1;
 
   white-space: nowrap;
-
-  overflow: hidden;
 
   text-overflow: ellipsis;
 }
@@ -264,11 +261,13 @@ img {
   align-items: center;
 
   gap:
-    clamp(20px, 4vw, 55px);
+    clamp(18px, 4vw, 50px);
 
   font-size: 13px;
 
   font-weight: 700;
+
+  flex-shrink: 0;
 }
 
 .desktop-nav a {
@@ -292,6 +291,7 @@ img {
   display: none;
 
   align-items: center;
+
   gap: 7px;
 
   border:
@@ -508,9 +508,9 @@ img {
 
   width: 100%;
 
-  max-width: 360px;
+  max-width: 380px;
 
-  min-height: 360px;
+  min-height: 380px;
 
   margin: 0 auto;
 }
@@ -536,13 +536,13 @@ img {
 }
 
 .orbit-one {
-  width: 270px;
-  height: 270px;
+  width: 285px;
+  height: 285px;
 }
 
 .orbit-two {
-  width: 315px;
-  height: 315px;
+  width: 330px;
+  height: 330px;
 
   opacity: 0.55;
 }
@@ -558,8 +558,8 @@ img {
   left: 50%;
   top: 50%;
 
-  width: 195px;
-  height: 195px;
+  width: 210px;
+  height: 210px;
 
   transform: translate(-50%, -50%);
 
@@ -577,8 +577,8 @@ img {
 }
 
 .hero-center-inner {
-  width: 160px;
-  height: 160px;
+  width: 175px;
+  height: 175px;
 
   display: grid;
 
@@ -602,8 +602,8 @@ img {
 
   place-items: center;
 
-  width: 98px;
-  height: 74px;
+  width: 105px;
+  height: 80px;
 
   border-radius:
     0 0 45% 45%;
@@ -620,11 +620,11 @@ img {
 
   position: absolute;
 
-  right: -20px;
-  top: 20px;
+  right: -22px;
+  top: 22px;
 
-  width: 26px;
-  height: 37px;
+  width: 28px;
+  height: 40px;
 
   border:
     7px solid
@@ -637,8 +637,8 @@ img {
 }
 
 .coffee-rings {
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
 
   display: grid;
 
@@ -897,14 +897,13 @@ img {
 
 
 /* =========================================================
-   MENU CARDS
-   ALL SAME COLOUR
+   MENU CARDS — SAME COLOUR
 ========================================================= */
 
 .menu-section {
   position: relative;
 
-  scroll-margin-top: 90px;
+  scroll-margin-top: 85px;
 
   padding:
     clamp(24px, 3vw, 35px);
@@ -917,6 +916,8 @@ img {
 
   border-radius: 5px;
 
+  color: var(--brown);
+
   box-shadow:
     0 5px 0
     rgba(74, 36, 22, 0.04);
@@ -925,9 +926,6 @@ img {
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
-
-
-/* FORCE ALL CARDS TO SAME COLOUR */
 
 .menu-section.dark-card,
 .menu-section.pink-card {
@@ -1004,6 +1002,8 @@ img {
   align-items: baseline;
 
   gap: 10px;
+
+  min-width: 0;
 }
 
 .section-number {
@@ -1217,10 +1217,7 @@ img {
   text-transform: uppercase;
 }
 
-.special-card.pink {
-  background: var(--cream);
-}
-
+.special-card.pink,
 .special-card.cream {
   background: var(--cream);
 }
@@ -1400,7 +1397,7 @@ footer {
 
 
 /* =========================================================
-   TABLETS / SMALL LAPTOPS
+   SMALL LAPTOPS
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1415,7 +1412,8 @@ footer {
   }
 
   .hero h1 {
-    font-size: clamp(48px, 7vw, 72px);
+    font-size:
+      clamp(48px, 7vw, 72px);
   }
 
   .hero-art {
@@ -1533,18 +1531,20 @@ footer {
 
   .brand {
     gap: 8px;
+
+    max-width: calc(100% - 95px);
   }
 
   .brand img {
-    width: 42px;
+    width: 40px;
     height: 44px;
   }
 
   .brand-name {
-    max-width: 180px;
+    max-width: calc(100vw - 145px);
 
     font-size:
-      clamp(14px, 4vw, 19px);
+      clamp(16px, 4.5vw, 21px);
   }
 
 
@@ -1565,7 +1565,7 @@ footer {
   }
 
 
-  /* SMALLER HERO ART */
+  /* HERO ART */
 
   .hero-art {
     min-height: 300px;
@@ -1742,25 +1742,27 @@ footer {
 
   .brand {
     gap: 7px;
+
+    max-width: calc(100% - 90px);
   }
 
   .brand img {
-    width: 39px;
-    height: 41px;
+    width: 36px;
+    height: 40px;
   }
 
   .brand-name {
-    max-width: 145px;
+    max-width: calc(100vw - 135px);
 
     font-size:
-      clamp(13px, 4vw, 17px);
+      clamp(15px, 4.5vw, 19px);
   }
 
   .menu-toggle {
     padding:
       7px 11px;
 
-    font-size: 11px;
+    font-size: 10px;
   }
 
 
@@ -1794,7 +1796,7 @@ footer {
   }
 
 
-  /* EVEN SMALLER COFFEE ART */
+  /* SMALLER COFFEE ART */
 
   .hero-art {
     min-height: 255px;
@@ -1919,21 +1921,19 @@ footer {
   }
 
   .brand img {
-    width: 36px;
+    width: 34px;
     height: 38px;
   }
 
   .brand-name {
-    max-width: 120px;
-
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .menu-toggle {
     padding:
       6px 9px;
 
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .hero h1 {
