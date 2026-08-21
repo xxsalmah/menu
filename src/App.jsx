@@ -667,7 +667,7 @@ function App() {
               <div>
                 <span>Phone</span>
                 <p>
-                  +254 777 712 777
+                  018 003 500
                 </p>
               </div>
             </div>
