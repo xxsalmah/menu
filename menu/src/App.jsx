@@ -29,7 +29,7 @@ const menu = {
     ["Chicken Nuggets", "350"],
     ["Chicken Nuggets with Chips", "500"],
     ["Chicken Strips with Chips", "500"],
-    ["Chizza (Chips with pizza Toppings)", "200"],
+    ["Chizza (Chips With Pizza Toppings)", "200"],
   ],
 
   Waffles: [
