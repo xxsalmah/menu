@@ -21,7 +21,7 @@ const menu = {
     ["Potato Tornado", "100"],
     ["Chips Masala", "250"],
     ["Chips Mayai", "250"],
-    ["Chips Viruga with Chicken & Veges", "450"],
+    ["Chips Vuruga with Chicken & Veges", "450"],
     ["Bhajia", "100"],
     ["Corndog", "150"],
     ["Single Burger", "350"],
@@ -29,14 +29,13 @@ const menu = {
     ["Chicken Nuggets", "350"],
     ["Chicken Nuggets with Chips", "500"],
     ["Chicken Strips with Chips", "500"],
-    ["Chicken Wings", "450"],
-    ["Chicken Wings with Chips", "600"],
+    ["Chizza (Chips with pizza toppings)", "200"],
   ],
 
-  Waffle: [
+  Waffles: [
     ["Belgium Waffle (Plain)", "200"],
-    ["Belgium Waffle with Ice Cream", "550"],
-    ["Belgium Waffle with Ice Cream & Fruits", "600"],
+    ["Belgium Waffle with ice cream", "550"],
+    ["Belgium Waffle with ice cream & Fruits", "600"],
   ],
 
   Snacks: [
@@ -46,21 +45,125 @@ const menu = {
     ["Chicken Pie", "200"],
     ["Samosa (2)", "150"],
     ["Croissant", "150"],
-    ["Cinnamon roll", "100"],
-    ["Lotus Cinnamon roll", "200"],
-    ["Nutella Cinnamon roll", "200"],
-    ["Brownie", "120"],
-    ["Chocoball", "80"],
+    ["Cinnamon roll", "150"],
+    ["Oreo Cinnamon roll", "200"],
+    ["Lotus Cinnamon roll", "250"],
+    ["Nutella Cinnamon roll", "250"],
+    ["Brownie", "150"],
+    ["Chocoball", "100"],
     ["Chocolate cream cookies", "50"],
   ],
 
   Cakes: [
-    ["Lotus Cake/ Milk Cake", "450"],
+    ["Lotus Cake", "450"],
     ["Fudge Cake", "400"],
     ["Black Forest", "300"],
     ["Red Velvet", "400"],
     ["Tiramisu Cake", "450"],
     ["White Forest", "300"],
+  ],
+
+  "Tea Selection": [
+    ["African Tea", "200"],
+    ["Somali Tea", "250"],
+    ["English Tea", "300"],
+    ["Masala Tea", "250"],
+    ["Black Tea", "100"],
+    ["Chai Latte", "300"],
+    ["Hot Chocolate", "250"],
+    ["Camel Tea", "250"],
+    ["Karak Tea", "300"],
+    ["Dawa Tea", "250"],
+    ["Lemon Tea", "200"],
+    ["Ginger Tea", "200"],
+    ["Hibiscus Tea", "200"],
+  ],
+
+  "Hot Coffee": [
+    ["Cappuccino", "270 / 300"],
+    ["Latte", "270 / 300"],
+    ["Mocha", "270 / 300"],
+    ["Macchiato", "270 / 300"],
+    ["Espresso", "120 / 170"],
+    ["Americano", "220 / 270"],
+    ["House Coffee", "270 / 300"],
+  ],
+
+  "Flavoured Coffee": [
+    ["Vanilla Latte", "300 / 320"],
+    ["Caramel Latte", "300 / 320"],
+    ["Hazelnut Latte", "300 / 320"],
+  ],
+
+  "Iced Coffee": [
+    ["Hazelnut Iced Latte", "400"],
+    ["Vanilla Iced Latte", "400"],
+    ["Biscoff Iced Latte", "400"],
+    ["Caramel Iced Latte", "400"],
+    ["Iced Spanish Latte", "400"],
+    ["Iced Americano", "400"],
+    ["Iced Orange Americano", "400"],
+  ],
+
+  Matcha: [
+    ["Plain Matcha", "500"],
+    ["Vanilla Matcha", "600"],
+    ["Strawberry Matcha", "600"],
+    ["Blue berry Matcha", "600"],
+    ["Caramel Matcha", "600"],
+    ["Mango Matcha", "600"],
+    ["Berry Matcha", "600"],
+    ["Peach Matcha", "600"],
+  ],
+
+  "Mojito-Ades": [
+    ["Passion", "450"],
+    ["Bluetong", "450"],
+    ["Strawberry", "450"],
+    ["Lemon", "450"],
+    ["Peach", "450"],
+    ["Lychee", "450"],
+    ["Mango", "450"],
+    ["Green Apple", "450"],
+    ["Virgin", "450"],
+    ["Vision", "450"],
+    ["Shaolin Temple", "450"],
+    ["Blue Lagoon", "450"],
+    ["Hurricane", "450"],
+    ["Blue Hawaii", "450"],
+    ["Pinacolada", "450"],
+    ["Bananacolada", "450"],
+  ],
+
+  "Ice Cream": [
+    ["Single Scoop", "250"],
+    ["Double Scoop", "400"],
+    ["Triple Scoop", "550"],
+    ["Soft Serve Cone", "100 / 200"],
+    ["Soft Serve Cup", "100 / 200"],
+    ["Affogato", "400"],
+    ["Matcha-gato", "500"],
+  ],
+
+  Smoothies: [
+    ["Mango Tropic", "400"],
+    ["Hydrabad Smoothie", "600"],
+    ["Tropical Smoothie", "600"],
+    ["Mango Lassie", "600"],
+    ["Strawberry Lassie", "600"],
+  ],
+
+  Shakes: [
+    ["Vanilla", "400"],
+    ["Strawberry", "400"],
+    ["Chocolate", "400"],
+  ],
+
+  Juices: [
+    ["Passion", "300"],
+    ["Mango", "300"],
+    ["Watermelon", "300"],
+    ["Avocado", "300"],
   ],
 
   "Fruit Boba": [
@@ -76,7 +179,7 @@ const menu = {
     ["Fusion", "500"],
   ],
 
-  "Regular Boba": [
+  Boba: [
     ["Vanilla", "550"],
     ["Chocolate", "550"],
     ["Strawberry", "550"],
@@ -90,192 +193,83 @@ const menu = {
     ["Tiger", "600"],
   ],
 
-  "Tea Selection": [
-    ["African Tea", "200"],
-    ["Chai Latte", "300"],
-    ["Somali Tea", "250"],
-    ["Hot Chocolate", "250"],
-    ["English Tea", "300"],
-    ["Caramel Tea", "300"],
-    ["Masala Tea", "250"],
-    ["Karak Tea", "250"],
-    ["Black Tea", "100"],
-  ],
-
-  "Herbal Tea": [
-    ["African Tea", "200"],
-    ["Chai Latte", "200"],
-    ["Somali Tea", "250"],
-    ["Hot Chocolate", "250"],
-  ],
-
-  "Hot Coffee": [
-    ["Cappuccino", "270 / 300"],
-    ["Latte", "270 / 300"],
-    ["Mocha", "270 / 300"],
-    ["Macchiato", "270 / 300"],
-    ["Espresso", "120 / 170"],
-    ["Americano", "220 / 270"],
-    ["House Coffee", "270 / 300"],
-  ],
-
-  "Iced Coffee": [
-    ["Hazelnut Iced Latte", "400"],
-    ["Vanilla Iced Latte", "400"],
-    ["Biscotti Iced Latte", "400"],
-    ["Caramel Iced Latte", "400"],
-    ["Iced Spanish Latte", "400"],
-  ],
-
-  "Flavored Coffee": [
-    ["Vanilla Latte", "300 / 320"],
-    ["Caramel Latte", "300 / 320"],
-    ["Hazelnut Latte", "300 / 320"],
-  ],
-
-  Matcha: [
-    ["Plain Matcha", "500"],
-  ],
-
-  "Flavoured Matcha": [
-    ["Vanilla Matcha", "600"],
-    ["Mango Matcha", "600"],
-    ["Strawberry Matcha", "600"],
-    ["Berry Matcha", "600"],
-    ["Blue berry Matcha", "600"],
-    ["Peach Matcha", "600"],
-    ["Caramel Matcha", "600"],
-  ],
-
-  "Signature Matcha": [
-    ["Taro Matcha", "450"],
-    ["Matcha Frappe", "450"],
-    ["Matcha espresso fusion", "450"],
+  "Matcha Boba": [
+    ["Taro Matcha", "650"],
+    ["Matcha Frappe", "650"],
+    ["Matcha esspresso fussion", "650"],
     ["Toppings (Tapioca popping)", "50"],
   ],
 
-  "Mojito Ades": [
-    ["Passion", "450"],
-    ["Blueberry", "450"],
-    ["Strawberry", "450"],
-    ["Lemon", "450"],
-    ["Peach", "450"],
-    ["Lychee", "450"],
-    ["Mango", "450"],
-    ["Green Apple", "450"],
-    ["Virgin", "450"],
-    ["Vision", "450"],
-    ["Shaolin temple", "450"],
-    ["Blue lagoon", "450"],
-    ["Hurricane", "450"],
-    ["Blue Hawaii", "450"],
-    ["Pina colada", "450"],
-    ["Banana avocado", "450"],
-  ],
-
-  "Ice Cream": [
-    ["Single Scoop", "250"],
-    ["Double scoop", "400"],
-    ["Triple scoop", "550"],
-    ["Soft Serve Cone - Small", "100"],
-    ["Soft Serve Cone - Large", "200"],
-    ["Soft Serve Cup - Small", "100"],
-    ["Soft Serve Cup - Large", "200"],
-    ["Affogato", "400"],
-    ["Matcha-gato", "400"],
-  ],
-
-  Smoothies: [
-    ["Mango Tropic", "400"],
-    ["Hydroboost Smoothie", "400"],
-    ["Tropical Smoothie", "400"],
-    ["Mango Lassle", "400"],
-    ["Strawberry Lassle", "400"],
-  ],
-
-  Shakes: [
-    ["Regular Shake", "400"],
-    ["Vanilla", "400"],
-    ["Strawberry", "400"],
-    ["Chocolate", "400"],
-    ["Premium Flavours", "500"],
-  ],
-
-  Juices: [
-    ["Passion", "300"],
-    ["Mango", "300"],
-    ["Water Melon", "300"],
-    ["Avocado", "300"],
-  ],
-
   Sundaes: [
-    ["Brownie", "400"],
-    ["Biscuit", "400"],
-    ["Oreo", "400"],
-    ["Boba", "400"],
+    ["Brownie Sundae", "400"],
+    ["Biscoff Sundae", "400"],
+    ["Oreo Sundae", "400"],
+    ["Boba Sundae", "400"],
   ],
 
-  /*
-   * ICE ROLLS
-   * Kept from your previous Ice Rolls menu.
-   * All 23 flavours are still included.
-   */
   "Ice Rolls": [
+    ["Snickers", "400"],
+    ["Mix Roll", "400"],
+    ["Matcha + Condensed", "400"],
+    ["Lotus", "350"],
+    ["Kit Kat", "350"],
+    ["Coconut Cookies", "350"],
+    ["Taro", "350"],
+    ["Matcha", "350"],
+    ["Peach", "350"],
+    ["Lychee", "350"],
+    ["Brownie", "350"],
+    ["Chocolate chip", "350"],
+    ["Honey nuts", "350"],
+    ["Pistachio", "350"],
+    ["Lemon Sorbet", "350"],
+    ["Wafers", "350"],
+    ["Karak", "350"],
+    ["Green Apple", "350"],
+    ["Nutella Banana", "300"],
+    ["Ferrero Rocher", "300"],
+    ["Kunafa", "300"],
+    ["Mango Chilli", "300"],
     ["Blueberry", "300"],
     ["Strawberry", "300"],
-    ["Coca Cola", "300"],
-    ["Cookies", "350"],
-    ["Caramel", "350"],
-    ["Passion", "300"],
-    ["Choco Chip", "300"],
-    ["Kit Kat", "400"],
+    ["Oregon", "300"],
+    ["Chocolate chip", "300"],
     ["Fanta", "300"],
-    ["Banana", "300"],
-    ["Fruits", "400"],
-    ["Mabuyu", "300"],
-    ["Oreo", "300"],
-    ["Vanilla", "300"],
-    ["Coffee", "300"],
-    ["Lotus", "350"],
-    ["Mabuyu Tile", "350"],
-    ["Ukwaju", "300"],
-    ["Coconut Cookies", "350"],
-    ["Cake", "350"],
+    ["Coca Cola", "300"],
+    ["Passion", "300"],
     ["Mango", "300"],
     ["Watermelon", "300"],
-    ["Nuts", "300"],
+    ["Banana", "300"],
+    ["Ukwaju", "300"],
+    ["Mabuyu", "300"],
+    ["Mabuyu Tiles", "300"],
+    ["Vanilla", "300"],
+    ["Coffee", "300"],
+    ["Black Forest", "300"],
   ],
 };
 
 const icons = {
   "Shawarma & Savory Bites": Utensils,
-  Waffle: Cookie,
+  Waffles: Cookie,
   Snacks: Cookie,
   Cakes: CakeSlice,
-
-  "Fruit Boba": CupSoda,
-  "Regular Boba": CupSoda,
-  "Signature Boba": CupSoda,
-
   "Tea Selection": Coffee,
-  "Herbal Tea": Coffee,
   "Hot Coffee": Coffee,
+  "Flavoured Coffee": Coffee,
   "Iced Coffee": Coffee,
-  "Flavored Coffee": Coffee,
-
-  Matcha: Coffee,
-  "Flavoured Matcha": Coffee,
-  "Signature Matcha": Coffee,
-
-  "Mojito Ades": GlassWater,
-
+  Matcha: CupSoda,
+  "Mojito-Ades": GlassWater,
   "Ice Cream": IceCream,
-  "Ice Rolls": IceCream,
-
   Smoothies: GlassWater,
   Shakes: CupSoda,
   Juices: GlassWater,
+  "Fruit Boba": CupSoda,
+  Boba: CupSoda,
+  "Signature Boba": CupSoda,
+  "Matcha Boba": CupSoda,
   Sundaes: IceCream,
+  "Ice Rolls": IceCream,
 };
 
 const categories = ["All", ...Object.keys(menu)];
@@ -285,7 +279,8 @@ function MenuSection({ title, items, index }) {
 
   const hasTwoPrices =
     title === "Hot Coffee" ||
-    title === "Flavored Coffee";
+    title === "Flavoured Coffee" ||
+    title === "Ice Cream";
 
   return (
     <section
@@ -319,7 +314,7 @@ function MenuSection({ title, items, index }) {
             const prices = price.split(" / ");
 
             return (
-              <div className="menu-row" key={name}>
+              <div className="menu-row" key={`${name}-${price}`}>
                 <div className="item-name">
                   <span>{name}</span>
                 </div>
@@ -378,10 +373,7 @@ function App() {
           href="#home"
           aria-label="Cafe home"
         >
-          <img
-            src="/logo.png"
-            alt="Cafe logo"
-          />
+          <img src="/logo.png" alt="Cafe logo" />
 
           <span className="cafe-name">
             SPOONED
@@ -655,9 +647,7 @@ function App() {
 
               <div>
                 <span>Location</span>
-                <p>
-                  Muhoho Ave, Nairobi
-                </p>
+                <p>Muhoho Ave, Nairobi</p>
               </div>
             </div>
 
@@ -666,9 +656,7 @@ function App() {
 
               <div>
                 <span>Phone</span>
-                <p>
-                  018 003 500
-                </p>
+                <p>0180 035 000</p>
               </div>
             </div>
 
@@ -677,9 +665,7 @@ function App() {
 
               <div>
                 <span>Email</span>
-                <p>
-                  spooned@gmail.com
-                </p>
+                <p>spooned@gmail.com</p>
               </div>
             </div>
           </div>
