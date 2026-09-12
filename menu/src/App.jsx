@@ -232,7 +232,7 @@ const menu = {
     ["Mango Chilli", "300"],
     ["Blueberry", "300"],
     ["Strawberry", "300"],
-    ["Oregon", "300"],
+    ["Oreo", "300"],
     ["Chocolate chip", "300"],
     ["Fanta", "300"],
     ["Coca Cola", "300"],
